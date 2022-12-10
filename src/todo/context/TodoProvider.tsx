@@ -1,5 +1,7 @@
+import { useReducer } from "react";
 import { TodoContext } from "./TodoContext";
 import { TodoState } from '../interfaces/interfaces';
+import { todoReducer } from "./todoReducer";
 
 const INITIAL_STATE: TodoState = {
 
@@ -37,9 +39,12 @@ interface props {
 
 
 export const TodoProvider = ({ children }: props) => {
+
+    const [todoState, dispatch] = useReducer(todoReducer, INITIAL_STATE)
+
     return (
 
-        <TodoContext.Provider value={{}}>
+        <TodoContext.Provider value={{ todoState }}>
             {children}
         </TodoContext.Provider>
 
