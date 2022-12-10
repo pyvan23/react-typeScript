@@ -1,6 +1,6 @@
 import { Todo } from "../interfaces/interfaces"
-import { useContext } from 'react';
-import { TodoContext } from "../context/TodoContext";
+// import { useContext } from 'react';
+// import { TodoContext } from "../context/TodoContext";
 import { useTodos } from '../hooks/useTodos';
 
 interface props {
@@ -10,7 +10,7 @@ interface props {
 export const TodoItem = ({ todo }: props) => {
 
   // const { toggleTodo } =  useContext(TodoContext)
-  const { toggleTodo} = useTodos()
+  const { toggleTodo } = useTodos()
   // const onHandleDoubleClick = () => {
   //   toggleTodo(todo.id)
   // }
