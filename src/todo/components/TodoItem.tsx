@@ -1,6 +1,7 @@
 import { Todo } from "../interfaces/interfaces"
 import { useContext } from 'react';
 import { TodoContext } from "../context/TodoContext";
+import { useTodos } from '../hooks/useTodos';
 
 interface props {
   todo: Todo
@@ -8,16 +9,16 @@ interface props {
 
 export const TodoItem = ({ todo }: props) => {
 
-  const { toggleTodo } =  useContext(TodoContext)
-
-  const onHandleDoubleClick = () => {
-    toggleTodo(todo.id)
-  }
+  // const { toggleTodo } =  useContext(TodoContext)
+  const { toggleTodo} = useTodos()
+  // const onHandleDoubleClick = () => {
+  //   toggleTodo(todo.id)
+  // }
   return (
     <li style={{
       cursor: 'pointer',
       textDecoration: todo.completed ? 'line-through' : ''
-    }} onDoubleClick={onHandleDoubleClick} >
+    }} onDoubleClick={()=>toggleTodo(todo.id) } >
       {todo.desc}
     </li>
   )
