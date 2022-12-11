@@ -7,7 +7,7 @@ export const Title = () => {
 
     return (
         
-            <h1>Todos: {pendingTodos.length}</h1>
+            <h1>Todos: { pendingTodos }</h1>
 
         
     )

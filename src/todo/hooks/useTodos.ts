@@ -11,7 +11,7 @@ export const useTodos = () => {
 
     return {
         todos: todos,
-        pendingTodos: todos.filter(todo => !todo.completed),
+        pendingTodos: todos.filter(todo => !todo.completed).length,
         toggleTodo
 
     }
