@@ -6,8 +6,8 @@ import { TodoContext } from '../context/TodoContext';
 
 export const useTodos = () => {
 
-    const { todoState, toggleTodo } = useContext(TodoContext)
-    const { todos } = todoState
+    const { todoState, toggleTodo } = useContext(TodoContext);
+    const { todos } = todoState;
 
     return {
         todos: todos,
